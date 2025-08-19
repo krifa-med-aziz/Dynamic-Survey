@@ -1,0 +1,164 @@
+{
+  "id": "fcc5adad-62d1-4597-9ddd-feb85da37293",
+  "title": "Enquête de Satisfaction - Service Après-Vente Véhicule",
+  "active": true,
+  "startDate": "2025-04-27T23:00:00.000Z",
+  "endDate": "2025-05-27T23:00:00.000Z",
+  "sendAfter": 1,
+  "createdAt": "2025-04-28T15:07:47.054Z",
+  "updatedAt": "2025-07-30T07:58:51.228Z",
+
+  "satisfactionSurveyQuestions": [
+    {
+      "id": "efb79a5a-6a75-420f-a9aa-2e46179c6749",
+      "title": "Accueil du personnel (choix unique)",
+      "order": 1,
+      "required": true,
+      "responseType": "RADIO",
+      "createdAt": "2025-04-28T15:07:47.064Z",
+      "updatedAt": "2025-04-28T15:07:47.064Z",
+      "satisfactionSurveyQuestionChoices": [
+        {
+          "id": "191505b8-6c60-4b8a-a3a8-44c19c6d4d3d",
+          "createdAt": "2025-04-28T15:07:47.077Z",
+          "updatedAt": "2025-04-28T15:07:47.077Z",
+          "title": "Excellent"
+        },
+        {
+          "id": "7eb5ef94-dc9c-4a8d-b604-5e8a83338a51",
+          "createdAt": "2025-04-28T15:07:47.085Z",
+          "updatedAt": "2025-04-28T15:07:47.085Z",
+          "title": "Bon"
+        },
+        {
+          "id": "8b549792-b015-4f66-8b22-db6dd8c5dc7e",
+          "createdAt": "2025-04-28T15:07:47.091Z",
+          "updatedAt": "2025-04-28T15:07:47.091Z",
+          "title": "Moyen"
+        },
+        {
+          "id": "ff3c23f0-833b-416f-9654-943f4868cd6a",
+          "createdAt": "2025-04-28T15:07:47.101Z",
+          "updatedAt": "2025-04-28T15:07:47.101Z",
+          "title": "Mauvais"
+        }
+      ]
+    },
+    {
+      "id": "a570d0de-8277-4223-b8c1-967a1db690c8",
+      "title": "Délai de prise en charge",
+      "order": 2,
+      "required": true,
+      "responseType": "RADIO",
+      "createdAt": "2025-04-28T15:07:47.107Z",
+      "updatedAt": "2025-04-28T15:07:47.107Z",
+      "satisfactionSurveyQuestionChoices": [
+        {
+          "id": "e906725d-51e3-4e0d-8ef5-e375e94928e3",
+          "createdAt": "2025-04-28T15:07:47.112Z",
+          "updatedAt": "2025-04-28T15:07:47.112Z",
+          "title": "Très rapide"
+        },
+        {
+          "id": "75ec4c45-9f41-48ba-b61a-81024777d6ec",
+          "createdAt": "2025-04-28T15:07:47.116Z",
+          "updatedAt": "2025-04-28T15:07:47.116Z",
+          "title": "Rapide"
+        },
+        {
+          "id": "a4066a36-566a-477e-9569-d402f8eb6b1b",
+          "createdAt": "2025-04-28T15:07:47.124Z",
+          "updatedAt": "2025-04-28T15:07:47.124Z",
+          "title": "Acceptable"
+        },
+        {
+          "id": "de731899-3ff3-4bee-a8c1-6bb84f8af114",
+          "createdAt": "2025-04-28T15:07:47.131Z",
+          "updatedAt": "2025-04-28T15:07:47.131Z",
+          "title": "Lent"
+        },
+        {
+          "id": "207c7a71-4f0c-4729-ba5c-a8b3cec05cf1",
+          "createdAt": "2025-04-28T15:07:47.136Z",
+          "updatedAt": "2025-04-28T15:07:47.136Z",
+          "title": "Très lent"
+        }
+      ]
+    },
+    {
+      "id": "4b2341b9-ae5f-4584-a6d9-dbd517d8f90a",
+      "title": "Globalement, êtes-vous satisfait du service SAV ?",
+      "order": 3,
+      "required": true,
+      "responseType": "SELECT",
+      "createdAt": "2025-04-28T15:07:47.141Z",
+      "updatedAt": "2025-04-28T15:07:47.141Z",
+      "satisfactionSurveyQuestionChoices": [
+        {
+          "id": "5226e88d-4e0b-488b-8d94-5d7035ff8e2b",
+          "createdAt": "2025-04-28T15:07:47.145Z",
+          "updatedAt": "2025-04-28T15:07:47.145Z",
+          "title": "Très satisfait"
+        },
+        {
+          "id": "2866c32b-b8bc-4ca9-841f-116d75c52b28",
+          "createdAt": "2025-04-28T15:07:47.150Z",
+          "updatedAt": "2025-04-28T15:07:47.150Z",
+          "title": "Satisfait"
+        },
+        {
+          "id": "87f99a82-bcbc-4e95-8250-3712fe4c7f60",
+          "createdAt": "2025-04-28T15:07:47.154Z",
+          "updatedAt": "2025-04-28T15:07:47.154Z",
+          "title": "Peu satisfait"
+        },
+        {
+          "id": "559af7b5-c867-4dfd-8656-228393da81cc",
+          "createdAt": "2025-04-28T15:07:47.159Z",
+          "updatedAt": "2025-04-28T15:07:47.159Z",
+          "title": "Pas du tout satisfait"
+        }
+      ]
+    },
+    {
+      "id": "fe3cf850-d267-4f53-9fce-2a11db941bdf",
+      "title": "Notez la qualité de l'intervention",
+      "order": 4,
+      "required": true,
+      "responseType": "RATE",
+      "createdAt": "2025-04-28T15:07:47.165Z",
+      "updatedAt": "2025-04-28T15:07:47.165Z",
+      "satisfactionSurveyQuestionChoices": []
+    },
+    {
+      "id": "ff7d4d99-cbfd-4d23-82b0-faca1d8adfe2",
+      "title": "Autre idées",
+      "order": 6,
+      "required": true,
+      "responseType": "TEXT",
+      "createdAt": "2025-07-16T10:26:33.890Z",
+      "updatedAt": "2025-07-16T10:26:33.890Z",
+      "satisfactionSurveyQuestionChoices": []
+    },
+    {
+      "id": "612f5f2b-9968-4e16-9a17-a5dc0c81cc0b",
+      "title": "Vos suggestions ou remarques pour améliorer notre service ",
+      "order": 5,
+      "required": true,
+      "responseType": "TEXT",
+      "createdAt": "2025-04-28T15:07:47.171Z",
+      "updatedAt": "2025-04-28T15:07:47.171Z",
+      "satisfactionSurveyQuestionChoices": []
+    },
+    {
+      "id": "5e53627d-396d-40f2-9920-5090a1e982e6",
+      "title": "Note",
+      "order": 7,
+      "required": true,
+      "responseType": "NUMBER",
+      "createdAt": "2025-07-16T10:26:44.564Z",
+      "updatedAt": "2025-07-16T10:26:44.564Z",
+      "satisfactionSurveyQuestionChoices": []
+    }
+  ]
+}
