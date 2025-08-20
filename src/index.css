@@ -1,1 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inria+Serif:wght@400;700&display=swap");
 @import "tailwindcss";
+
+body {
+  font-family: "Inter", sans-serif;
+}
+.font-inria {
+  font-family: "Inria Serif", serif;
+}
+
+:root {
+  --color-primary: #161616;
+  --color-primary-hover: #2a2a2a;
+  --color-secondary: #667879;
+  --color-text: #666666;
+  --color-text-light: #a6a6a6;
+}
+
+@keyframes bounce-low {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
