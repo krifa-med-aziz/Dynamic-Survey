@@ -9,7 +9,7 @@ export default function SurveyIntro() {
       </p>
       <button
         onClick={() => setStep("questions")}
-        className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] transition text-white p-3 w-[90%] lg:w-[60%] rounded-4xl cursor-pointer "
+        className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] transition text-white p-3 w-[90%] lg:w-[60%] mx-auto rounded-4xl cursor-pointer "
       >
         Commencer l'enquête
       </button>

@@ -1,3 +1,5 @@
+import { FieldValues, UseFormRegister } from "react-hook-form";
+
 export type Tstep = "intro" | "questions" | "endMessage";
 export type TQuestion = {
   id: string;
@@ -13,4 +15,8 @@ export type TQuestion = {
     updatedAt: string;
     title: string;
   }[];
+};
+export type typeQuestionProps = {
+  question: TQuestion;
+  register: UseFormRegister<FieldValues>;
 };

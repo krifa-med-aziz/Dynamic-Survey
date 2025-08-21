@@ -1,6 +1,6 @@
 import { useSurveyContext } from "../lib/hooks";
 import Footer from "./Footer";
-import Questions from "./Questions";
+import Survey from "./Survey";
 import SurveyIntro from "./SurveyIntro";
 
 export default function Container() {
@@ -36,9 +36,9 @@ export default function Container() {
           </small>
         </div>
       </section>
-      <section className="flex-1/2 bg-white text-center flex flex-col justify-center px-8 lg:px-20 min-h-[400px]">
+      <section className="flex-1/2 bg-white text-center flex flex-col gap-8 justify-center px-8 py-20 lg:px-20 min-h-[400px]">
         {step === "intro" && <SurveyIntro />}
-        {step === "questions" && <Questions />}
+        {step === "questions" && <Survey />}
       </section>
       <Footer />
     </div>
