@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SurveyContext } from "./SurveyContext";
 import data from "../util/data.json";
 import { TQuestion, Tstep } from "../lib/types";
-import { useForm } from "react-hook-form";
+import { useForm, useFormContext } from "react-hook-form";
 
 export default function SurveyContextProvider({
   children,
@@ -16,10 +16,26 @@ export default function SurveyContextProvider({
   const {
     control,
     handleSubmit,
+    reset,
+    trigger,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
-    console.log(data);
+    console.log("results : ", data);
+    reset();
+    setStep("end");
+  };
+
+  const handleNext = async () => {
+    const isValid = await trigger(questions[currentQuestion - 1].id);
+    if (isValid) {
+      goToNextQuestion();
+    }
+  };
+
+  const goToNextQuestion = () => {
+    setCurrentQuestion((prev) => prev + 1);
   };
 
   return (
@@ -35,6 +51,7 @@ export default function SurveyContextProvider({
         handleSubmit,
         onSubmit,
         errors,
+        handleNext,
       }}
     >
       {children}

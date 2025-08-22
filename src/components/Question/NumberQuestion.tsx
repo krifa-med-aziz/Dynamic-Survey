@@ -1,6 +1,11 @@
 import { Controller } from "react-hook-form";
+import { typeQuestionProps } from "../../lib/types";
 
-export default function NumberQuestion({ question, control, errors }) {
+export default function NumberQuestion({
+  question,
+  control,
+  errors,
+}: typeQuestionProps) {
   return (
     <>
       <p className="font-bold mb-5 text-left">
@@ -21,8 +26,8 @@ export default function NumberQuestion({ question, control, errors }) {
             max={10}
             placeholder="Entrez un nombre..."
             className="w-full rounded-xl border border-[var(--color-secondary)] 
-                       px-4 py-3 focus:outline-none focus:border-[var(--color-secondary)] 
-                       focus:ring-1 focus:ring-[var(--color-secondary)]"
+                      px-4 py-3 focus:outline-none focus:border-[var(--color-secondary)] 
+                      focus:ring-1 focus:ring-[var(--color-secondary)]"
           />
         )}
       />

@@ -18,6 +18,7 @@ type SurveyContextType = {
   handleSubmit: UseFormHandleSubmit<FieldValues, FieldValues>;
   onSubmit: (data: any) => void;
   errors: FieldErrors<FieldValues>;
+  handleNext: () => Promise<void>;
 };
 
 export const SurveyContext = createContext<SurveyContextType | null>(null);

@@ -1,6 +1,11 @@
 import { Controller } from "react-hook-form";
+import { typeQuestionProps } from "../../lib/types";
 
-export default function RadioQuestion({ question, control, errors }) {
+export default function RadioQuestion({
+  question,
+  control,
+  errors,
+}: typeQuestionProps) {
   return (
     <div className="mb-5">
       <p className="font-bold mb-5 text-left">

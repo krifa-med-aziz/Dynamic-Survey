@@ -1,6 +1,11 @@
-import { FieldValues, UseFormRegister } from "react-hook-form";
+import {
+  Control,
+  FieldErrors,
+  FieldValues,
+  UseFormRegister,
+} from "react-hook-form";
 
-export type Tstep = "intro" | "questions" | "endMessage";
+export type Tstep = "intro" | "questions" | "end";
 export type TQuestion = {
   id: string;
   title: string;
@@ -18,5 +23,6 @@ export type TQuestion = {
 };
 export type typeQuestionProps = {
   question: TQuestion;
-  register: UseFormRegister<FieldValues>;
+  control: Control<FieldValues, any, FieldValues>;
+  errors: FieldErrors<FieldValues>;
 };

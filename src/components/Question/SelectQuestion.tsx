@@ -6,8 +6,13 @@ import {
   MenuItem,
   FormHelperText,
 } from "@mui/material";
+import { typeQuestionProps } from "../../lib/types";
 
-export default function SelectQuestion({ question, control, errors }) {
+export default function SelectQuestion({
+  question,
+  control,
+  errors,
+}: typeQuestionProps) {
   return (
     <>
       <p className="font-bold mb-5 text-left">
@@ -32,8 +37,12 @@ export default function SelectQuestion({ question, control, errors }) {
           "&:hover .MuiOutlinedInput-notchedOutline": {
             borderColor: "var(--color-secondary)",
           },
-          "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "var(--color-secondary)",
+          "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
+            {
+              borderColor: "var(--color-secondary) !important",
+            },
+          "& .Mui-focused .MuiSelect-icon": {
+            color: "var(--color-secondary)",
           },
         }}
       >
@@ -64,6 +73,14 @@ export default function SelectQuestion({ question, control, errors }) {
                         color: "white",
                       },
                       "&.Mui-selected": {
+                        backgroundColor: "var(--color-secondary)",
+                        color: "white",
+                        "&:hover": {
+                          backgroundColor: "var(--color-secondary)",
+                          color: "white",
+                        },
+                      },
+                      "&.Mui-selected.Mui-focusVisible": {
                         backgroundColor: "var(--color-secondary)",
                         color: "white",
                       },
