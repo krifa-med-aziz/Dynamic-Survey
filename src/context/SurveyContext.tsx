@@ -5,6 +5,7 @@ import {
   FieldErrors,
   FieldValues,
   UseFormHandleSubmit,
+  UseFormTrigger,
 } from "react-hook-form";
 
 type SurveyContextType = {

@@ -1,5 +1,7 @@
 import { Controller } from "react-hook-form";
 import { typeQuestionProps } from "../../lib/types";
+import FormErrorMessage from "../FormErrorMessage";
+import clsx from "clsx";
 
 export default function NumberQuestion({
   question,
@@ -10,30 +12,46 @@ export default function NumberQuestion({
     <>
       <p className="font-bold mb-5 text-left">
         {question.title}{" "}
-        {question.required && <span className="text-red-600">*</span>}
+        {question.required && (
+          <span className="text-[var(--color-red)]">*</span>
+        )}
       </p>
 
       <Controller
         name={question.id}
         control={control}
         defaultValue=""
-        rules={{ required: question.required }}
+        rules={{
+          required: question.required,
+          min: {
+            value: 0,
+            message: "Le nombre doit être supérieur ou égal à 0",
+          },
+          max: {
+            value: 10,
+            message: "Le nombre doit être inférieur ou égal à 10",
+          },
+        }}
         render={({ field }) => (
           <input
             {...field}
             type="number"
-            min={0}
-            max={10}
-            placeholder="Entrez un nombre..."
-            className="w-full rounded-xl border border-[var(--color-secondary)] 
-                      px-4 py-3 focus:outline-none focus:border-[var(--color-secondary)] 
-                      focus:ring-1 focus:ring-[var(--color-secondary)]"
+            placeholder="Entrez un nombre entre 0 et 10"
+            className={clsx(
+              "w-full rounded-xl border border-[var(--color-secondary)] px-4 py-3 focus:outline-none focus:border-[var(--color-secondary)] focus:ring-1 focus:ring-[var(--color-secondary)]",
+              {
+                "border-red-600": errors?.[question.id],
+              }
+            )}
           />
         )}
       />
 
       {errors?.[question.id] && (
-        <p className="text-red-600 mt-1 text-sm">Ce champ est obligatoire.</p>
+        <FormErrorMessage className="text-left ml-3">
+          {(errors?.[question.id]?.message as string) ||
+            "Ce champ est obligatoire."}
+        </FormErrorMessage>
       )}
     </>
   );

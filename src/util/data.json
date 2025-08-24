@@ -121,9 +121,44 @@
       ]
     },
     {
+      "id": "c9fbd3a3-2d73-49b0-8d1f-7ef344e25b8a",
+      "title": "Quels services avez-vous utilisés ? (choix multiple)",
+      "order": 4,
+      "required": true,
+      "responseType": "MULTISELECT",
+      "createdAt": "2025-08-24T15:00:00.000Z",
+      "updatedAt": "2025-08-24T15:00:00.000Z",
+      "satisfactionSurveyQuestionChoices": [
+        {
+          "id": "f4f6e0f2-29f8-4e6d-a2a6-9463f79db9e1",
+          "createdAt": "2025-08-24T15:00:00.000Z",
+          "updatedAt": "2025-08-24T15:00:00.000Z",
+          "title": "Entretien régulier"
+        },
+        {
+          "id": "98e2f0c6-8f87-40d2-9f4f-51c0f1fa2a15",
+          "createdAt": "2025-08-24T15:00:00.000Z",
+          "updatedAt": "2025-08-24T15:00:00.000Z",
+          "title": "Réparation"
+        },
+        {
+          "id": "46afac93-0a1c-49a5-9ff8-2ddf26a2d9b2",
+          "createdAt": "2025-08-24T15:00:00.000Z",
+          "updatedAt": "2025-08-24T15:00:00.000Z",
+          "title": "Remplacement de pièces"
+        },
+        {
+          "id": "6d6a75d7-8a37-49fc-a48d-0c6f3a5a4bcf",
+          "createdAt": "2025-08-24T15:00:00.000Z",
+          "updatedAt": "2025-08-24T15:00:00.000Z",
+          "title": "Diagnostic"
+        }
+      ]
+    },
+    {
       "id": "fe3cf850-d267-4f53-9fce-2a11db941bdf",
       "title": "Notez la qualité de l'intervention",
-      "order": 4,
+      "order": 5,
       "required": true,
       "responseType": "RATE",
       "createdAt": "2025-04-28T15:07:47.165Z",
@@ -143,7 +178,7 @@
     {
       "id": "612f5f2b-9968-4e16-9a17-a5dc0c81cc0b",
       "title": "Vos suggestions ou remarques pour améliorer notre service ",
-      "order": 5,
+      "order": 7,
       "required": true,
       "responseType": "TEXT",
       "createdAt": "2025-04-28T15:07:47.171Z",
@@ -153,7 +188,7 @@
     {
       "id": "5e53627d-396d-40f2-9920-5090a1e982e6",
       "title": "Note",
-      "order": 7,
+      "order": 8,
       "required": true,
       "responseType": "NUMBER",
       "createdAt": "2025-07-16T10:26:44.564Z",

@@ -19,7 +19,9 @@ export default function SurveyContextProvider({
     reset,
     trigger,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: "onChange",
+  });
 
   const onSubmit = (data) => {
     console.log("results : ", data);

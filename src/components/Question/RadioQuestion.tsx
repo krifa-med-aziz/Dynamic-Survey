@@ -1,5 +1,6 @@
 import { Controller } from "react-hook-form";
 import { typeQuestionProps } from "../../lib/types";
+import FormErrorMessage from "../FormErrorMessage";
 
 export default function RadioQuestion({
   question,
@@ -10,7 +11,9 @@ export default function RadioQuestion({
     <div className="mb-5">
       <p className="font-bold mb-5 text-left">
         {question.title}{" "}
-        {question.required && <span className="text-red-600">*</span>}
+        {question.required && (
+          <span className="text-[var(--color-red)]">*</span>
+        )}
       </p>
 
       <Controller
@@ -52,7 +55,7 @@ export default function RadioQuestion({
       />
 
       {errors?.[question.id] && (
-        <p className="text-red-600 text-sm mt-2">Ce champ est obligatoire.</p>
+        <FormErrorMessage>{"Ce champ est obligatoire."}</FormErrorMessage>
       )}
     </div>
   );

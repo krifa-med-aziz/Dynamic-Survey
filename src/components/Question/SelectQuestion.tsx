@@ -8,6 +8,35 @@ import {
 } from "@mui/material";
 import { typeQuestionProps } from "../../lib/types";
 
+const MenuProps = {
+  PaperProps: {
+    sx: {
+      backgroundColor: "white",
+      "& .MuiMenuItem-root": {
+        fontSize: "15px",
+        color: "var(--color-secondary)",
+        padding: "12px 16px",
+        borderRadius: "8px",
+        "&:hover": {
+          backgroundColor: "var(--color-secondary)",
+          color: "white",
+        },
+        "&.Mui-selected": {
+          backgroundColor: "var(--color-secondary)",
+          color: "white",
+          "&:hover": {
+            backgroundColor: "var(--color-secondary)",
+            color: "white",
+          },
+        },
+        "&.Mui-selected.Mui-focusVisible": {
+          backgroundColor: "var(--color-secondary)",
+          color: "white",
+        },
+      },
+    },
+  },
+};
 export default function SelectQuestion({
   question,
   control,
@@ -17,7 +46,9 @@ export default function SelectQuestion({
     <>
       <p className="font-bold mb-5 text-left">
         {question.title}{" "}
-        {question.required && <span className="text-red-600">*</span>}
+        {question.required && (
+          <span className="text-[var(--color-red)]">*</span>
+        )}
       </p>
       <FormControl
         fullWidth
@@ -59,35 +90,7 @@ export default function SelectQuestion({
               fullWidth
               notched={false}
               displayEmpty
-              MenuProps={{
-                PaperProps: {
-                  sx: {
-                    backgroundColor: "white",
-                    "& .MuiMenuItem-root": {
-                      fontSize: "15px",
-                      color: "var(--color-secondary)",
-                      padding: "12px 16px",
-                      borderRadius: "8px",
-                      "&:hover": {
-                        backgroundColor: "var(--color-secondary)",
-                        color: "white",
-                      },
-                      "&.Mui-selected": {
-                        backgroundColor: "var(--color-secondary)",
-                        color: "white",
-                        "&:hover": {
-                          backgroundColor: "var(--color-secondary)",
-                          color: "white",
-                        },
-                      },
-                      "&.Mui-selected.Mui-focusVisible": {
-                        backgroundColor: "var(--color-secondary)",
-                        color: "white",
-                      },
-                    },
-                  },
-                },
-              }}
+              MenuProps={MenuProps}
             >
               <MenuItem value="">
                 <em>-- Choisir une option --</em>

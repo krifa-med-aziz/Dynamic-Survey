@@ -15,7 +15,9 @@ export default function RateQuestion({
     <>
       <p className="font-bold mb-5 text-left">
         {question.title}{" "}
-        {question.required && <span className="text-red-600">*</span>}
+        {question.required && (
+          <span className="text-[var(--color-red)]">*</span>
+        )}
       </p>
       <Controller
         name={question.id}
@@ -25,7 +27,8 @@ export default function RateQuestion({
         render={({ field }) => (
           <Box sx={{ "& > legend": { mt: 2 } }}>
             <Rating
-              name="half-rating"
+              name="size-large"
+              size="large"
               defaultValue={2.5}
               precision={0.5}
               value={field.value}
@@ -36,9 +39,6 @@ export default function RateQuestion({
           </Box>
         )}
       />
-      {errors?.[question.id] && (
-        <p className="text-red-600 mt-1 text-sm">Ce champ est obligatoire.</p>
-      )}
     </>
   );
 }

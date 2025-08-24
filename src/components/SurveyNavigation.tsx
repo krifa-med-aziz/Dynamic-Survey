@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useSurveyContext } from "../lib/hooks";
 
 export default function SurveyNavigation() {
-  const { currentQuestion, setCurrentQuestion, setStep, handleNext } =
+  const { currentQuestion, setCurrentQuestion, numberOfQuestions, handleNext } =
     useSurveyContext();
   return (
     <div className="flex justify-center sm:justify-end items-center w-full mt-10">
@@ -18,7 +18,7 @@ export default function SurveyNavigation() {
         </button>
       )}
 
-      {currentQuestion < 7 && (
+      {currentQuestion < numberOfQuestions && (
         <button
           type="button"
           className={clsx(
@@ -33,7 +33,7 @@ export default function SurveyNavigation() {
         </button>
       )}
 
-      {currentQuestion === 7 && (
+      {currentQuestion === numberOfQuestions && (
         <button
           type="submit"
           className={

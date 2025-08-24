@@ -6,6 +6,7 @@ import SelectQuestion from "./Question/SelectQuestion";
 import NumberQuestion from "./Question/NumberQuestion";
 import RateQuestion from "./Question/RateQuestion";
 import SurveyNavigation from "./SurveyNavigation";
+import MultiSelectQuestion from "./Question/MultiSelectQuestion";
 import { motion } from "framer-motion";
 
 const questionComponents = {
@@ -13,6 +14,7 @@ const questionComponents = {
   TEXT: TextQuestion,
   NUMBER: NumberQuestion,
   SELECT: SelectQuestion,
+  MULTISELECT: MultiSelectQuestion,
   RATE: RateQuestion,
 };
 
