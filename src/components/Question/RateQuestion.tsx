@@ -2,8 +2,13 @@ import { typeQuestionProps } from "../../lib/types";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import { Controller } from "react-hook-form";
+import FormErrorMessage from "../FormErrorMessage";
 
-export default function RateQuestion({ question, control }: typeQuestionProps) {
+export default function RateQuestion({
+  question,
+  control,
+  errors,
+}: typeQuestionProps) {
   return (
     <>
       <p className="font-bold mb-5 text-left">
@@ -19,6 +24,7 @@ export default function RateQuestion({ question, control }: typeQuestionProps) {
         rules={{
           required: question.required,
           validate: (value) => value !== null,
+          min: "1",
         }}
         render={({ field }) => (
           <Box sx={{ "& > legend": { mt: 2 } }}>
@@ -35,6 +41,11 @@ export default function RateQuestion({ question, control }: typeQuestionProps) {
           </Box>
         )}
       />
+      {errors?.[question.id] && (
+        <FormErrorMessage>
+          Veuillez donner une note d'au moins 1 étoile.
+        </FormErrorMessage>
+      )}
     </>
   );
 }
