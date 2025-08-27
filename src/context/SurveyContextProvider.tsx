@@ -1,18 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { SurveyContext } from "./SurveyContext";
-import data from "../util/data.json";
-import { TQuestion, Tstep } from "../lib/types";
-import { useForm, useFormContext } from "react-hook-form";
+import { TQuestion, Tstep, TSurvey } from "../lib/types";
+import { FieldValues, useForm } from "react-hook-form";
+import { getSurvey } from "../lib/api";
 
 export default function SurveyContextProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [step, setStep] = useState<Tstep>("intro");
+  const [survey, setSurvey] = useState<TSurvey | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const surveyQuestions = async () => {
+      try {
+        const data = await getSurvey("fcc5adad-62d1-4597-9ddd-feb85da37293");
+        setSurvey(data);
+        setStep("intro");
+      } catch (err) {
+        console.error("Error fetching survey", err);
+        setStep("error");
+      } finally {
+        setLoading(false);
+      }
+    };
+    surveyQuestions();
+  }, []);
+
+  const [step, setStep] = useState<Tstep>("loading");
   const [currentQuestion, setCurrentQuestion] = useState(1);
-  const questions: TQuestion[] = data.satisfactionSurveyQuestions;
-  const numberOfQuestions = data.satisfactionSurveyQuestions.length;
+  const questions: TQuestion[] = survey?.satisfactionSurveyQuestions ?? [];
+  const numberOfQuestions = survey?.satisfactionSurveyQuestions?.length ?? 0;
   const {
     control,
     handleSubmit,
@@ -23,7 +42,7 @@ export default function SurveyContextProvider({
     mode: "onChange",
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: FieldValues) => {
     console.log("results : ", data);
     reset();
     setStep("end");
@@ -54,6 +73,7 @@ export default function SurveyContextProvider({
         onSubmit,
         errors,
         handleNext,
+        survey,
       }}
     >
       {children}

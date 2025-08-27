@@ -1,4 +1,7 @@
+import { useSurveyContext } from "../lib/hooks";
+
 export default function SurveyHero() {
+  const { survey } = useSurveyContext();
   return (
     <section className="flex-1/2 relative px-10 py-10 sm:py-5">
       <img
@@ -15,8 +18,8 @@ export default function SurveyHero() {
             style={{ animationName: "bounce-low" }}
           />
         </div>
-        <h1 className="font-inria font-bold text-2xl sm:text-3xl md:text-4xl">
-          Enquête de Satisfaction
+        <h1 className="font-inria font-bold text-xl sm:text-2xl md:text-3xl">
+          {survey?.title || "Enquête de Satisfaction"}
         </h1>
         <p className="font-light text-white/50 text-sm sm:text-md lg:w-[80%]">
           Participez à notre enquête de satisfaction pour nous aider à améliorer

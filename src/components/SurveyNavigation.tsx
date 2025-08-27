@@ -5,12 +5,12 @@ export default function SurveyNavigation() {
   const { currentQuestion, setCurrentQuestion, numberOfQuestions, handleNext } =
     useSurveyContext();
   return (
-    <div className="flex justify-center sm:justify-end items-center w-full mt-10">
+    <div className="flex justify-center sm:justify-end items-center w-full mt-auto">
       {currentQuestion > 1 && (
         <button
           type="button"
           className={
-            "text-[var(--color-secondary)] bg-[#F1F1F1] py-2 px-5 rounded-bl-xl rounded-tl-xl cursor-pointer text-[12px] sm:text-base"
+            "text-[var(--color-secondary)] bg-[#F1F1F1] py-2 px-5 rounded-bl-xl rounded-tl-xl cursor-pointer text-[12px] md:text-base"
           }
           onClick={() => setCurrentQuestion((prev) => prev - 1)}
         >
@@ -22,7 +22,7 @@ export default function SurveyNavigation() {
         <button
           type="button"
           className={clsx(
-            "bg-[var(--color-primary)] text-[var(--color-text-light)] py-2 px-5 rounded-br-xl rounded-tr-xl cursor-pointer text-[12px] sm:text-base",
+            "bg-[var(--color-primary)] text-[var(--color-text-light)] py-2 px-5 rounded-br-xl rounded-tr-xl cursor-pointer text-[12px] md:text-base",
             {
               "rounded-xl": currentQuestion === 1,
             }
@@ -37,7 +37,7 @@ export default function SurveyNavigation() {
         <button
           type="submit"
           className={
-            "bg-[var(--color-primary)] text-[var(--color-text-light)] py-2 px-5 rounded-br-xl rounded-tr-xl cursor-pointer text-[12px] sm:text-base"
+            "bg-[var(--color-primary)] text-[var(--color-text-light)] py-2 px-5 rounded-br-xl rounded-tr-xl cursor-pointer text-[12px] md:text-base"
           }
         >
           Submit

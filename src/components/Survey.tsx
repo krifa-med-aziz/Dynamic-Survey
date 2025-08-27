@@ -39,7 +39,10 @@ export default function Survey() {
         {currentQuestion}/{numberOfQuestions}
       </small>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="w-full flex flex-col h-full flex-1"
+      >
         <motion.div
           key={questions[currentQuestion - 1].id}
           initial={{ opacity: 0, y: 20 }}

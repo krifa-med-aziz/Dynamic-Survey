@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { TQuestion, Tstep } from "../lib/types";
+import { TQuestion, Tstep, TSurvey } from "../lib/types";
 import {
   Control,
   FieldErrors,
@@ -20,6 +20,7 @@ type SurveyContextType = {
   onSubmit: (data: any) => void;
   errors: FieldErrors<FieldValues>;
   handleNext: () => Promise<void>;
+  survey: TSurvey | null;
 };
 
 export const SurveyContext = createContext<SurveyContextType | null>(null);

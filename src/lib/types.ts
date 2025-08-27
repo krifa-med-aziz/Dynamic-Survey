@@ -1,11 +1,19 @@
-import {
-  Control,
-  FieldErrors,
-  FieldValues,
-  UseFormRegister,
-} from "react-hook-form";
+import { Control, FieldErrors, FieldValues } from "react-hook-form";
 
-export type Tstep = "intro" | "questions" | "end";
+export type TSurvey = {
+  id: string;
+  title: string;
+  active: string;
+  startDate: string;
+  endDate: string;
+  sendAfter: number;
+  createdAt: string;
+  updatedAt: string;
+  satisfactionSurveyQuestions: TQuestion[];
+};
+
+export type Tstep = "intro" | "questions" | "end" | "loading" | "error";
+
 export type TQuestion = {
   id: string;
   title: string;
@@ -21,6 +29,7 @@ export type TQuestion = {
     title: string;
   }[];
 };
+
 export type typeQuestionProps = {
   question: TQuestion;
   control: Control<FieldValues, any, FieldValues>;
