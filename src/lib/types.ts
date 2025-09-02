@@ -3,7 +3,7 @@ import { Control, FieldErrors, FieldValues } from "react-hook-form";
 export type TSurvey = {
   id: string;
   title: string;
-  active: string;
+  active: boolean;
   startDate: string;
   endDate: string;
   sendAfter: number;
@@ -34,4 +34,12 @@ export type typeQuestionProps = {
   question: TQuestion;
   control: Control<FieldValues, any, FieldValues>;
   errors: FieldErrors<FieldValues>;
+};
+
+export type TData = {
+  responses: {
+    question: string;
+    response: string;
+    choices: string | string[];
+  }[];
 };
